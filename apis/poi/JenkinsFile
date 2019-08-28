@@ -14,9 +14,9 @@ pipeline {
                     env.PATH = "${dockerHome}:${env.PATH}"
 
                     def poi = docker.build("openhackib74acr/poi:1", "./apis/poi/web")
-                    def trips = docker.build("openhackib74acr/poi:1", "./apis/trips")
-                    def user-java = docker.build("openhackib74acr/poi:1", "./apis/user-java")
-                    def userprofile = docker.build("openhackib74acr/poi:1", "./apis/userprofile")
+                    def trips = docker.build("openhackib74acr/trips:1", "./apis/trips")
+                    def user-java = docker.build("openhackib74acr/user-java:1", "./apis/user-java")
+                    def userprofile = docker.build("openhackib74acr/userprofile:1", "./apis/userprofile")
                     // sh "git rev-parse HEAD > .git/commit-id"
                     // def commit_id = readFile('.git/commit-id').trim()
                     // println commit_id
