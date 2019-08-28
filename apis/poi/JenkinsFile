@@ -12,13 +12,13 @@ pipeline {
                     // Get the Terraform tool.
                     def dockerHome = tool name: 'LatestDocker'
                     env.PATH = "${dockerHome}:${env.PATH}"
-                }
 
-                def image = docker.build("${env.registry}:${env.tag-beta}")
-                image.push()
-                // sh "git rev-parse HEAD > .git/commit-id"
-                // def commit_id = readFile('.git/commit-id').trim()
-                // println commit_id
+                    def image = docker.build("${env.registry}:${env.tag-beta}")
+                    image.push()
+                    // sh "git rev-parse HEAD > .git/commit-id"
+                    // def commit_id = readFile('.git/commit-id').trim()
+                    // println commit_id
+                }
             }
         }
     }
