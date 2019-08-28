@@ -5,11 +5,13 @@ pipeline {
     }
     stages {
         stage('Build') { 
-            steps { 
+            steps {
+                echo "Going to checkout" 
                 checkout scm
-                sh "git rev-parse HEAD > .git/commit-id"
-                def commit_id = readFile('.git/commit-id').trim()
-                println commit_id
+                echo "Build docker here"
+                // sh "git rev-parse HEAD > .git/commit-id"
+                // def commit_id = readFile('.git/commit-id').trim()
+                // println commit_id
             }
         }
     }
