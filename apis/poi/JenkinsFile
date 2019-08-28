@@ -13,8 +13,7 @@ pipeline {
                     def dockerHome = tool name: 'LatestDocker'
                     env.PATH = "${dockerHome}:${env.PATH}"
 
-                    def image = docker.build("openhackib74acr:1")
-                    image.push()
+                    docker build .\apis\poi\web\Dockerfile -t "openhackib74acr:1"
                     // sh "git rev-parse HEAD > .git/commit-id"
                     // def commit_id = readFile('.git/commit-id').trim()
                     // println commit_id
